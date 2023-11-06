@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap");
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vw;
+}
+
+.header-title {
+    font-family: "Bowlby One", sans-serif;
+    font-size: 2.5rem;
+}
+
+.header-title-span {
+    margin-left: 2vw;
+    color: #e51e1e;
+}
+
+.header-button {
+    border-style: none;
+}
+
+.header-icon {
+    font-size: 2.5rem;
+}
