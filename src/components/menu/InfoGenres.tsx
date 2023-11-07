@@ -18,9 +18,9 @@ export const InfoGenres: FC<InfoGenresProps> = ({ onActionSuccess }) => {
 
     useEffect(() => {
         const fetchDataGenres = async () => {
-            const { API_BASE_URL } = import.meta.env;
+            const { VITE_API_BASE_URL } = import.meta.env;
             try {
-                const response = await fetch(`${API_BASE_URL}/genres`);
+                const response = await fetch(`${VITE_API_BASE_URL}/genres`);
 
                 if (!response.ok) {
                     throw new Error(`Request Failed: ${response.status} ${response.statusText}`);

@@ -1,10 +1,10 @@
 import { handleErrorResponse } from "../utils";
 
-const { API_BASE_URL } = import.meta.env;
+const { VITE_API_BASE_URL } = import.meta.env;
 
 export const fetchDataAllUsers = async (accessToken: string): Promise<UserData[]> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/users`, {
+        const response = await fetch(`${VITE_API_BASE_URL}/users`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`,
@@ -22,7 +22,7 @@ export const fetchDataAllUsers = async (accessToken: string): Promise<UserData[]
 
 export const fetchDataUserById = async (userId: number, accessToken: string): Promise<UserData | null> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+        const response = await fetch(`${VITE_API_BASE_URL}/users/${userId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`,
@@ -40,7 +40,7 @@ export const fetchDataUserById = async (userId: number, accessToken: string): Pr
 
 export const createUserIfNotExists = async (name: string, email: string, accessToken: string) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/users`, {
+        const response = await fetch(`${VITE_API_BASE_URL}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export const createUserIfNotExists = async (name: string, email: string, accessT
 
 export const createMoviePost = async (userId: number, movieData: FormData, accessToken: string) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/movies/${userId}`, {
+        const response = await fetch(`${VITE_API_BASE_URL}/movies/${userId}`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
@@ -83,7 +83,7 @@ export const createMoviePost = async (userId: number, movieData: FormData, acces
 
 export const updateMoviePut = async (movieId: number, movieData: FormData, accessToken: string) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/movies/${movieId}`, {
+        const response = await fetch(`${VITE_API_BASE_URL}/movies/${movieId}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,

@@ -9,7 +9,7 @@ export const AddGenre: FC<ActionMovieProps> = ({ movieId, onActionSuccess }) => 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
-        const { API_BASE_URL } = import.meta.env;
+        const { VITE_API_BASE_URL } = import.meta.env;
         e.preventDefault();
 
         if (!genreName.trim()) {
@@ -18,7 +18,7 @@ export const AddGenre: FC<ActionMovieProps> = ({ movieId, onActionSuccess }) => 
         }
 
         try {
-            const response = await fetch(`${API_BASE_URL}/genres/${movieId}`, {
+            const response = await fetch(`${VITE_API_BASE_URL}/genres/${movieId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
