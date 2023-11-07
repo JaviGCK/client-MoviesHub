@@ -2,8 +2,9 @@ import { DeleteGenreProps } from "./actionTypes";
 
 export const DeleteGenre: React.FC<DeleteGenreProps> = ({ genreId, onActionSuccess }) => {
     const handleDeleteClick = async () => {
+        const { API_BASE_URL } = import.meta.env;
         try {
-            const response = await fetch(`http://localhost:8080/genres/${genreId}`, {
+            const response = await fetch(`${API_BASE_URL}/genres/${genreId}`, {
                 method: 'DELETE',
             });
 

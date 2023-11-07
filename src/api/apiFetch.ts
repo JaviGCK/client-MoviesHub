@@ -1,12 +1,6 @@
 import { handleErrorResponse } from "../utils";
 
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-const API_BASE_URL = process.env.API_BASE_URL;
-
-
+const { API_BASE_URL } = import.meta.env;
 
 export const fetchDataAllUsers = async (accessToken: string): Promise<UserData[]> => {
     try {

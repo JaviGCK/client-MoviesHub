@@ -25,10 +25,11 @@ export const MovieForm: React.FC<MovieFormProps> = ({ userId, movieId, onUpdate,
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
+            const { API_BASE_URL } = import.meta.env;
             if (movieId) {
                 try {
                     const accessToken = await getAccessTokenSilently();
-                    const response = await fetch(`http://localhost:8080/movies/${movieId}`, {
+                    const response = await fetch(`${API_BASE_URL}/movies/${movieId}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${accessToken}`,
