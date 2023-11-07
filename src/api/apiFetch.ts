@@ -1,6 +1,9 @@
 import { handleErrorResponse } from "../utils";
 
-const API_BASE_URL = 'http://localhost:8080';
+require('dotenv').config();
+
+const API_BASE_URL = process.env.API_BASE_URL;
+
 
 
 export const fetchDataAllUsers = async (accessToken: string): Promise<UserData[]> => {
